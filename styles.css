@@ -759,6 +759,128 @@ textarea {
   background: var(--deep-blue);
 }
 
+.seo-section {
+  background: var(--white);
+}
+
+.seo-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.seo-link-grid a {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 14px 16px;
+  color: var(--charcoal);
+  background: #f7fbff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.seo-link-grid a:hover {
+  color: var(--white);
+  background: var(--safety-dark);
+  border-color: var(--safety-dark);
+}
+
+.seo-keyword-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.seo-page {
+  background: #f7fbff;
+}
+
+.seo-content {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.seo-copy {
+  display: grid;
+  gap: 22px;
+}
+
+.seo-copy article,
+.seo-aside {
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 38px rgba(11, 31, 58, 0.08);
+}
+
+.seo-copy h2,
+.seo-aside h2 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.seo-copy h3 {
+  margin: 18px 0 8px;
+  color: var(--ink);
+  font-size: 1.18rem;
+}
+
+.seo-copy p,
+.seo-copy li,
+.seo-aside p,
+.seo-aside li {
+  color: var(--steel);
+}
+
+.seo-copy p,
+.seo-aside p {
+  margin: 0 0 12px;
+}
+
+.seo-copy ul,
+.seo-aside ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.seo-aside {
+  position: sticky;
+  top: 132px;
+}
+
+.seo-aside .button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.seo-aside .button-secondary {
+  color: var(--ink);
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: var(--steel);
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.breadcrumb a {
+  color: var(--safety-dark);
+}
+
 @media (max-width: 1120px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -812,6 +934,16 @@ textarea {
 
   .parts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .seo-link-grid,
+  .seo-keyword-grid,
+  .seo-content {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-aside {
+    position: static;
   }
 }
 
