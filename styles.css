@@ -121,123 +121,86 @@ textarea {
 }
 
 .hero {
-  position: relative;
-  min-height: 650px;
   display: grid;
-  align-items: end;
-  overflow: hidden;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  min-height: 560px;
   color: var(--white);
-  background:
-    linear-gradient(90deg, rgba(6, 55, 125, 0.96), rgba(18, 78, 153, 0.78) 48%, rgba(31, 116, 255, 0.2)),
-    linear-gradient(135deg, #0b4fb3, #061d45);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 110px;
-  background:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 54px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.45), transparent);
+  background: linear-gradient(135deg, #06377d, #061d45);
 }
 
 .hero-media {
-  position: absolute;
-  inset: 0;
-  opacity: 0.92;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 32px 24px 32px 0;
 }
 
-.hero-media::before {
-  content: "";
-  position: absolute;
-  right: -8%;
-  bottom: 8%;
-  width: min(760px, 74vw);
-  aspect-ratio: 1.9;
-  background:
-    linear-gradient(145deg, transparent 0 34%, rgba(220, 236, 255, 0.34) 35% 39%, transparent 40%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-  transform: skewX(-10deg);
-}
-
-.hero-trailer {
-  position: absolute;
-  right: clamp(18px, 8vw, 120px);
-  bottom: 105px;
-  width: min(650px, 74vw);
-  height: 250px;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.42));
-}
-
-.trailer-body,
-.trailer-rail,
-.trailer-drawbar,
-.trailer-wheel {
-  position: absolute;
+.hero-media img,
+.trailer-product-photo img,
+.trailer-gallery img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.trailer-body {
-  right: 65px;
-  bottom: 58px;
-  width: 70%;
-  height: 112px;
-  background: linear-gradient(180deg, #cfd8dd, #8e9aa1);
-  border: 5px solid #082a61;
-  clip-path: polygon(0 24%, 100% 0, 100% 100%, 0 100%);
+.hero-media img {
+  border-radius: 8px;
 }
 
-.trailer-rail {
-  right: 70px;
-  height: 9px;
-  background: #082a61;
+.hero-media figcaption {
+  margin-top: 10px;
+  color: #e4eaed;
+  font-size: 0.85rem;
 }
 
-.rail-one {
-  bottom: 160px;
-  width: 66%;
-  transform: rotate(-5deg);
+.trailer-product-photo {
+  margin: 0;
+  background: var(--white);
 }
 
-.rail-two {
-  bottom: 132px;
-  width: 64%;
-  transform: rotate(-5deg);
+.trailer-product-photo figcaption {
+  padding: 10px 16px;
+  color: var(--steel);
+  font-size: 0.82rem;
 }
 
-.trailer-drawbar {
-  right: 0;
-  bottom: 74px;
-  width: 130px;
-  height: 16px;
-  background: #082a61;
-  transform: rotate(-10deg);
-  transform-origin: left center;
+.trailer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
-.trailer-wheel {
-  bottom: 20px;
-  width: 78px;
-  height: 78px;
-  border: 14px solid #071f47;
-  border-radius: 50%;
-  background: #aeb8bd;
+.trailer-gallery figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
 }
 
-.wheel-left {
-  right: 365px;
+.trailer-gallery figcaption {
+  padding: 14px 16px;
+  color: var(--steel);
+  font-weight: 700;
 }
 
-.wheel-right {
-  right: 135px;
+.trailer-gallery-section {
+  scroll-margin-top: 190px;
+  border-top: 1px solid var(--line);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
   max-width: 760px;
-  padding: 0 clamp(20px, 6vw, 84px) 100px;
+  padding: 56px clamp(20px, 4vw, 64px);
 }
 
 .eyebrow {
@@ -251,7 +214,7 @@ textarea {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.8rem);
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
   line-height: 0.96;
   letter-spacing: 0;
 }
@@ -907,18 +870,24 @@ textarea {
   }
 
   .hero {
-    min-height: 720px;
+    grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .hero-content {
-    padding-bottom: 76px;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 48px 24px 32px;
   }
 
-  .hero-trailer {
-    right: -90px;
-    bottom: 85px;
-    width: 620px;
-    opacity: 0.52;
+  .hero-media {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 24px 32px;
+  }
+
+  .trailer-gallery {
+    grid-template-columns: 1fr;
   }
 
   .trust-strip,
