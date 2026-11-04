@@ -1041,3 +1041,35 @@ textarea {
   white-space: nowrap;
   border: 0;
 }
+
+.range-guide-link { margin: -12px 0 28px; color: var(--safety-dark); font-weight: 700; }
+.range-guide-link a, .buying-section p a { text-decoration: underline; text-underline-offset: 3px; }
+.product-card h3 a:hover { color: var(--safety-dark); text-decoration: underline; }
+.buying-section { background: var(--white); border-top: 1px solid var(--line); }
+.buying-section h3 { color: var(--ink); font-size: 1.3rem; }
+.buying-section p { color: var(--steel); max-width: 80ch; }
+.comparison-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+.comparison-table { width: 100%; border-collapse: collapse; text-align: left; }
+.comparison-table caption { padding: 16px; color: var(--steel); text-align: left; font-weight: 700; }
+.comparison-table th, .comparison-table td { padding: 16px; border-top: 1px solid var(--line); vertical-align: top; }
+.comparison-table thead { color: var(--white); background: var(--deep-blue); }
+.comparison-table tbody tr:nth-child(even) { background: var(--mist); }
+.comparison-table th[scope="row"] { min-width: 160px; }
+#compare-sizes, .comparison-table tr { scroll-margin-top: 200px; }
+.buying-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin: 32px 0; }
+.buying-grid article { min-width: 0; padding: 24px; background: var(--mist); border: 1px solid var(--line); border-radius: 8px; }
+.buying-grid h3 { margin-top: 0; }
+.buying-grid p:last-child { margin-bottom: 0; }
+.buying-faq { margin: 32px 0; max-width: 900px; }
+.buying-faq details { padding: 18px 0; border-top: 1px solid var(--line); }
+.buying-faq summary { cursor: pointer; color: var(--ink); font-weight: 700; }
+.cage-options { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.buying-section .option-price { color: var(--safety-dark); font-size: 1.5rem; font-weight: 900; }
+.option-price small { font-size: 0.85rem; }
+.cage-example { max-width: 960px; margin: 36px 0; }
+.cage-example img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.cage-example figcaption { margin-top: 10px; color: var(--steel); font-size: 0.9rem; }
+@media (max-width: 860px) {
+  .buying-grid, .cage-options { grid-template-columns: 1fr; }
+  .comparison-table th, .comparison-table td { padding: 12px; }
+}
